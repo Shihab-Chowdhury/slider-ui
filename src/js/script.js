@@ -27,27 +27,49 @@ const inputBox = document.getElementById("inputBox");
 const slidersContainer = document.getElementById("sliders");
 const inputValues = [];
 
-addSliderButton.addEventListener("click", () => {
-  const inputName = document.getElementById("inputName").value;
-  if (inputName.trim() !== "") {
-    const sliderElement = document.createElement("div");
+addSliderButton.addEventListener('click', () => {
+  const inputName = document.getElementById('inputName').value;
+  if (inputName.trim() !== '') {
+    const sliderElement = document.createElement('div');
+    sliderElement.className = 'w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700';
     sliderElement.innerHTML = `
-      <div>
-        <label for="inputValue${inputValues.length}">${inputName}:</label>
-        <input type="range" id="inputValue${inputValues.length}" min="0" max="100" step="1" value="0">
+      <div class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+        <label for="inputValue${inputValues.length}" class="mr-2">${inputName}:</label>
+        <input type="range" id="inputValue${inputValues.length}" class="px-2 py-1" min="0" max="100" step="1" value="0">
       </div>
     `;
     slidersContainer.appendChild(sliderElement);
 
-    const inputSlider = sliderElement.querySelector(
-      `#inputValue${inputValues.length}`
-    );
-    inputSlider.addEventListener("input", updateGraph);
+    const inputSlider = sliderElement.querySelector(`#inputValue${inputValues.length}`);
+    inputSlider.addEventListener('input', updateGraph);
     inputValues.push(parseFloat(inputSlider.value));
 
     updateGraph();
   }
 });
+
+// addSliderButton.addEventListener("click", () => {
+//   const inputName = document.getElementById("inputName").value;
+//   if (inputName.trim() !== "") {
+//     const sliderElement = document.createElement("div");
+//     // sliderElement.classList.add("w-full", "h-2", "bg-gray-200", "rounded-lg", "appearance-none", "cursor-pointer", "dark:bg-gray-700");
+//     sliderElement.innerHTML = `
+//       <div>
+//         <label for="inputValue${inputValues.length}">${inputName}:</label>
+//         <input type="range" id="inputValue${inputValues.length}" min="0" max="100" step="1" value="0">
+//       </div>
+//     `;
+//     slidersContainer.appendChild(sliderElement);
+
+//     const inputSlider = sliderElement.querySelector(
+//       `#inputValue${inputValues.length}`
+//     );
+//     inputSlider.addEventListener("input", updateGraph);
+//     inputValues.push(parseFloat(inputSlider.value));
+
+//     updateGraph();
+//   }
+// });
 
 function updateGraph() {
   const inputLabels = Array.from(
