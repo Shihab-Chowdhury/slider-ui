@@ -74,3 +74,32 @@ function updateGraph() {
   );
   barGraph.update();
 }
+
+const pieCtx = document.getElementById("pieChart").getContext("2d");
+const pieChart = new Chart(pieCtx, {
+  type: "pie",
+  data: {
+    labels: ["Total Asset", "Total Investment"],
+    datasets: [
+      {
+        label: "Asset vs Investment",
+        data: [0, 0],
+        backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(192, 75, 75, 0.2)"],
+        borderColor: ["rgba(75, 192, 192, 1)", "rgba(192, 75, 75, 1)"],
+        borderWidth: 1,
+      },
+    ],
+  },
+});
+
+const investmentBox = document.getElementById("investmentBox");
+const calculateButton = document.getElementById("calculateButton");
+
+calculateButton.addEventListener("click", () => {
+  const totalAsset =
+    parseFloat(document.getElementById("totalAsset").value) || 0;
+  const totalInvestment =
+    parseFloat(document.getElementById("totalInvestment").value) || 0;
+  pieChart.data.datasets[0].data = [totalAsset, totalInvestment];
+  pieChart.update();
+});
