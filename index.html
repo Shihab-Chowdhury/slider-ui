@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body>
-    <div id="main" class="flex p-5">
-      
+    <div id="main" class="flex flex-row p-5">
       <div id="input" class="w-2/5">
-
         <div class="pb-10">
           <link
             rel="stylesheet"
@@ -27,19 +25,20 @@
             <label
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               for="file_input"
-              >Click the "Choose File" button below to select a CSV file from your device. This file should contain the data you want to import.
-
-              Once you've selected the file, click the "Upload" button to begin the import process. Our system will process the data and update your records accordingly.
-              </label
-            >
+              >Click the "Choose File" button below to select a CSV file from
+              your device. This file should contain the data you want to import.
+              Once you've selected the file, click the "Upload" button to begin
+              the import process. Our system will process the data and update
+              your records accordingly.
+            </label>
             <input
               class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
               id="file_input"
               type="file"
-            />           
+            />
           </div>
         </div>
-        
+
         <div class="pb-5">
           <link
             rel="stylesheet"
@@ -51,54 +50,34 @@
             <label
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               for="file_input"
-              >Otherwise add Sliders using the input box below. Input text and then click on the Add button</label
+              >Otherwise add Sliders using the input box below. Input text and
+              then click on the Add button</label
             >
-            
-            <div class="flex flex-row gap-2">
 
-              <input type="text" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-text bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="inputName" placeholder="Bonds, Crypto .."/>
+            <div class="flex flex-row gap-2">
+              <input
+                type="text"
+                class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-text bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                id="inputName"
+                placeholder="Bonds, Crypto .."
+              />
               <button
-              id="addSliderButton"
-              class="w-32 rounded-lg bg-slate-800 text-sm font-medium text-white"
+                id="addSliderButton"
+                class="w-32 rounded-lg bg-gray-900 text-sm font-medium text-white"
               >
-              Add
-              <div
-              class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"
-              ></div>
-            </button>
-          </div>
-                    
+                Add
+                
+              </button>
+            </div>
           </div>
         </div>
 
-        
-
-        
-
-        <!-- <div id="inputBox" class="">
-          <label for="inputName" class="">Name:</label>
-          <input type="text" class="border-gray-800" id="inputName" /> -->
-          <!-- component -->
-          <!-- <button
-            id="addSliderButton"
-            class="group relative h-8 w-32 overflow-hidden rounded-2xl bg-gray-500 text-lg font-bold text-white"
-          >
-            Add
-            <div
-              class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"
-            ></div>
-          </button>
-          <button id="addSliderButton" class="rounded-md bg-slate-600">
-            Add Slider
-          </button>
-        </div> -->
-
-        <div id="sliders" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+        <div id="sliders" class="">
           <!-- Sliders will be dynamically added here -->
         </div>
       </div>
 
-      <div id="graph" class="w-3/5 p-5">
+      <div id="graph" class="w-full p-5">
         <canvas id="barGraph"></canvas>
       </div>
     </div>

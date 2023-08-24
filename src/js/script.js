@@ -31,7 +31,6 @@ addSliderButton.addEventListener("click", () => {
   const inputName = document.getElementById("inputName").value;
   if (inputName.trim() !== "") {
     const sliderElement = document.createElement("div");
-    // sliderElement.classList.add("w-full", "h-2", "bg-gray-200", "rounded-lg", "appearance-none", "cursor-pointer", "dark:bg-gray-700");
     sliderElement.innerHTML = `
       <div>
         <label for="inputValue${inputValues.length}">${inputName}:</label>
