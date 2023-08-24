@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+}
+.container1 {
+  display: flexbox;
+}
+
+.graph {
+  width: 800px;
+  margin-left: 20px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multi-Input Bar Graph App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container1">
+        <div id="inputBox">
+          <label for="inputName">Name:</label>
+          <input type="text" id="inputName" />
+          <button id="addSliderButton">Add Slider</button>
+        </div>
+
+        <div id="sliders">
+          <!-- Sliders will be dynamically added here -->
+        </div>
+      </div>
+
+      <div id="graph" class="graph">
+        <canvas id="barGraph"></canvas>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
