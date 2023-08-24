@@ -7,20 +7,53 @@
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body>
-    <div class="container flex">
+    <div class="container flex p-5"> 
+      <div class="">
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css"
+        />
 
-  
-    
-  
-      <div id="investmentBox" class=" p-4">
-        <label for="totalAsset" class="mr-2">Total Asset:</label>
-        <input type="number" id="totalAsset" class="px-2 py-1 border rounded">
-        <label for="totalInvestment" class="ml-4 mr-2">Total Investment:</label>
-        <input type="number" id="totalInvestment" class="px-2 py-1 border rounded">
-        <button id="calculateButton" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Calculate</button>
+        <!-- This is an example component -->
+        <div class="max-w-2xl mx-auto">
+          <label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            for="file_input"
+            >Upload a CSV File</label
+          >
+          <label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            for="file_input"
+            >Click the "Choose File" button below to select a CSV file from
+            your device. This file should contain the data you want to import.
+            Once you've selected the file, click the "Upload" button to begin
+            the import process. Our system will process the data and update
+            your records accordingly.
+          </label>
+          <input
+            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+            id="file_input"
+            type="file"
+          />
+        </div>
+      </div>
+
+      <div id="investmentBox" class="pl-8">
+        <div class="flex flex-col pb-4">
+
+          <div class="pb-2">
+            <label for="totalAsset" class="mr-2">Total Asset:</label>
+            <input type="number" id="totalAsset" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-text bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+          </div>
+          <div>
+            <label for="totalInvestment" class="">Total Investment:</label>
+            <input type="number" id="totalInvestment" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-text bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+          </div>
+        </div>
+        <button id="calculateButton" class="w-32 h-10 rounded-lg bg-gray-900 text-sm font-medium text-white">Calculate</button>
       </div>
   
-      <div class="graph">
+      <div class="graph pl-8">
         <canvas id="pieChart"></canvas>
       </div>
   
@@ -28,36 +61,7 @@
   
     <div id="main" class="flex flex-row p-5">
       <div id="input" class="w-2/5">
-        <div class="pb-10">
-          <link
-            rel="stylesheet"
-            href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css"
-          />
-
-          <!-- This is an example component -->
-          <div class="max-w-2xl mx-auto">
-            <label
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              for="file_input"
-              >Upload a CSV File</label
-            >
-            <label
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              for="file_input"
-              >Click the "Choose File" button below to select a CSV file from
-              your device. This file should contain the data you want to import.
-              Once you've selected the file, click the "Upload" button to begin
-              the import process. Our system will process the data and update
-              your records accordingly.
-            </label>
-            <input
-              class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-              id="file_input"
-              type="file"
-            />
-          </div>
-        </div>
-
+        
         <div class="pb-5">
           <link
             rel="stylesheet"
@@ -96,7 +100,7 @@
         </div>
       </div>
 
-      <div id="graph" class="w-full p-5">
+      <div id="graph" class="w-full pl-5 pr-5">
         <canvas id="barGraph"></canvas>
       </div>
     </div>
